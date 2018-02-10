@@ -1,4 +1,4 @@
-require 'access_checker'
+require 'lib/access_checker'
 
 ActiveRecord::Base.class_eval do
   include AccessChecker::Base
