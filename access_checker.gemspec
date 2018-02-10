@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
-    "init.rb",
     "lib/access_checker/access_control.rb",
     "lib/access_checker/base.rb",
     "lib/access_checker/control.rb",
