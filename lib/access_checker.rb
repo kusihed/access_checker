@@ -18,7 +18,6 @@ module AccessChecker
     class AccessDenied < SecurityError; end
     class EmptyRoles   < RuntimeError; end
     class SyntaxError  < ArgumentError; end
-
 end
 
 
