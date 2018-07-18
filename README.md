@@ -1,16 +1,16 @@
-# AccessController
+# AccessChecker
 
-AccessController is a simple replacement for ACL9, a role-based authentication gem.
-AccessController is primarily oriented for functioning as a before\_action role authentication 
+AccessChecker is a simple replacement for ACL9, a role-based authentication gem.
+AccessChecker is primarily oriented for functioning as a before\_action role authentication 
 scheme for Rails controllers.
 
 ## Basic concepts
 Authentication is often called for on a controller-by-controller basis, restricting
-actions to users who possess certain roles. AccessController (current version) assumes only one role
-per user. AccessController requires a _current\_user_ method accessible at the controller level
+actions to users who possess certain roles. AccessChecker (current version) assumes only one role
+per user. AccessChecker requires a _current\_user_ method accessible at the controller level
 and which returns a User object.
 
-AccessController adds, to the User model, role accessor methods: has\_role?, has\_role!, get\_role
+AccessChecker adds, to the User model, role accessor methods: has\_role?, has\_role!, get\_role
 
 ## Structure
 
@@ -85,8 +85,8 @@ in-line because Rails is treating it as a before_action and so expects a
 before_action type of ( :only =>, :except => ) hash which would then apply
 to the before_action itself and thus bypass any explicit checking.
 
-Unauthorized access yields an exception: AccessController::AccessDenied .
-Syntax errors in formulating the control parameters will also raise an exception: AccessController::SyntaxError .
+Unauthorized access yields an exception: AccessChecker::AccessDenied .
+Syntax errors in formulating the control parameters will also raise an exception: AccessChecker::SyntaxError .
 You'll probably want to catch those exceptions and handle them gracefully, probably in your ApplicationController.
 
 Notice that roles, limit_types, and controller actions are all expected to be symbols.
@@ -130,12 +130,13 @@ Catch exceptions:
 
 ```
 class ApplicationController < ActionController::Base
-   rescue_from AccessController::AccessDenied do |e|
+   rescue_from AccessChecker::AccessDenied do |e|
      # do something here
    end
 ```
  
 ## Acknowledgements
 
-AccessController was influenced by the acl9 gem (https://github.com/be9/acl9). 
+AccessChecker was influenced by the acl9 gem (https://github.com/be9/acl9). 
+
 
