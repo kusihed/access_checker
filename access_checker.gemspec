@@ -7,11 +7,7 @@ Gem::Specification.new do |s|
   s.date = "2018-01-01"
   s.description = "Simple access control on controller basis"
   s.email = "m.hed@gmx.ch"
-  s.extra_rdoc_files = [
-    "README"
-  ]
   s.files = [
-    ".releaser_config",
     "Gemfile",
     "README.md",
     "Rakefile",
@@ -21,7 +17,6 @@ Gem::Specification.new do |s|
     "lib/access_checker/control.rb",
     "lib/access_checker/subject_extensions.rb",
     "lib/access_checker.rb",
-    "rails/init.rb",
     "access_checker.gemspec"
   ]
   s.homepage = "http://github.com/kusihed/access_checker"
